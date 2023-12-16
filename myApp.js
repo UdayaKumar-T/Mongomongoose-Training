@@ -1,6 +1,8 @@
+var app = require('mongoose');
 require('dotenv').config();
-
-
+let URI = process.env.MONGO_URI;
+app.connect(URI, { useNewUrlParser: true, useUnifiedTopology: true });
+console.log('Mango DB Connected');
 let Person;
 
 const createAndSavePerson = (done) => {
